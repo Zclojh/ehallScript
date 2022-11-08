@@ -1,16 +1,17 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+
 import rlButton from './components/Button.vue'
-import Toast from './components/message/index'
+import rlMessage from './components/rlMessage';
 import { ComponentInternalInstance, getCurrentInstance } from 'vue'
-const { proxy } = useCurrentInstance()
+// import Message from './components/message';
 const cl = () => {
-  console.log('12345')
-  console.log(proxy)
-  proxy.$toast('essss')
-  console.log('123')
+  // alert('1')
+  // Message.warning("测试效果");
+  rlMessage.error({
+    content: "网络错误，请稍后再试",
+    duration: 3000,
+    close: false
+});
 }
 
 function useCurrentInstance() {
@@ -24,6 +25,7 @@ function useCurrentInstance() {
 
 <template>
   <!-- <h3>anniu</h3> -->
+  <rl-message message="测试消息"></rl-message>
   <rl-button size="small" @click="cl">按钮测试</rl-button>
   <!-- <div>
     <a href="https://vitejs.dev" target="_blank">

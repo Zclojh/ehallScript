@@ -1,14 +1,16 @@
 import { createApp } from 'vue'
 import './global.css'
 import App from './App.vue'
-import Toast from './components/message/index'
+import 'remixicon/fonts/remixicon.css'
 const rlApp = createApp(App)
-rlApp.use(Toast)
 rlApp.mount(
   (() => {
     const app = document.createElement('div')
     app.classList.add('rl-container')
+    const messageDiv = document.createElement('div')
+    messageDiv.classList.add('rl-message')
     document.body.append(app)
+    document.body.append(messageDiv)
     return app
   })()
 )
