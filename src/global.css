@@ -1,0 +1,35 @@
+.rl-container{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    
+    z-index: 99999;
+}
+
+.rl-button{
+    color: white;
+    border: none;
+    padding: .4em 1.1em;
+    background-color: #4CAF50;
+    border-radius: 2px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s; /* Safari */    
+    transition-duration: 0.4s;
+}
+.rl-button:hover:not(.disabled){
+    background-color: #00AC6A;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
+}
+
+.rl-button.small {
+    font-size: 10px !important;
+}
+.rl-button.large {
+    font-size: 17px !important;
+}
+.rl-button.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
