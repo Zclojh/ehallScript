@@ -1,0 +1,97 @@
+.r-message {
+    position: absolute;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2em;
+    overflow: hidden;
+    z-index: 91052;
+    pointer-events: none;
+    font-size: 1em;
+
+    &__item {
+        min-width: 300px;
+        display: inline-flex;
+        align-items: center;
+        max-width: 92%;
+        animation-duration: 150ms;
+        margin: 0.5em 0;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+        border-radius: 0.25em;
+        pointer-events: auto;
+        opacity: 0.92;
+        color: #fff;
+        min-height: 3em;
+        cursor: pointer;
+
+        // Colors
+        &--success {
+            background-color: @success;
+        }
+
+        &--info {
+            background-color: @info;
+        }
+
+        &--warning {
+            background-color: @warning;
+        }
+
+        &--error {
+            background-color: @error;
+        }
+
+        &--default {
+            border: @default;
+            background-color: #fff;
+            color: @default;
+        }
+
+        // Individual toast position
+        &.r-message__item--top,
+        &.r-message__item--bottom {
+            align-self: center;
+        }
+
+        &.r-message__item--top-right,
+        &.r-message__item--bottom-right {
+            align-self: flex-end;
+        }
+
+        &.r-message__item--top-left,
+        &.r-message__item--bottom-left {
+            align-self: flex-start;
+        }
+    }
+
+    &__text {
+        margin: 0;
+        padding: 0.5em 1em;
+        word-break: break-word;
+        user-select: none;
+    }
+
+    &__icon {
+        display: none;
+    }
+
+    // Notice container positions
+    &.r-message--top {
+        flex-direction: column;
+    }
+
+    &.r-message--bottom {
+        flex-direction: column-reverse;
+    }
+
+    &.r-message--custom-parent {
+        position: absolute;
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 0;
+        position: fixed !important;
+    }
+}

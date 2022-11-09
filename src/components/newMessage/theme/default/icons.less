@@ -1,0 +1,21 @@
+.r-message {
+  &__item {
+    opacity: 1;
+    min-height: 4em;
+
+    .r-message__text {
+      padding: 1.5em .8em;
+    }
+
+    .r-message__icon {
+      display: block;
+      margin-left: .8em;
+      font-size: 1.3em;
+
+      [dir="rtl"] & {
+        margin-left: unset;
+        margin-right: .5em;
+      }
+    }
+  }
+}

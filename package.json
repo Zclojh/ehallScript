@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "mitt": "^3.0.0",
     "remixicon": "^2.5.0",
     "vue": "^3.2.41"
   },
